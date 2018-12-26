@@ -17,7 +17,7 @@ class NNetwork(val layers: List[Int]) extends Network  {
   // initialize layers in network
   var weights = (layers zip layers.tail) map (x => DenseMatrix.rand(x._1,x._2))
   var biases  = ((layers.tail) map  (x => DenseMatrix.rand(1,x))
-  var y = DenseMatrix.zeros[Double](5,1)
+//  var y = DenseMatrix.zeros[Double](5,1)
 
   def activation(z:Double): Double = {
     (1.0/(1.0+ exp(-1.0*z)))

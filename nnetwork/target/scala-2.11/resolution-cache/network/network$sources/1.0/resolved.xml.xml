@@ -4,7 +4,7 @@
 		module="network$sources"
 		revision="1.0"
 		status="integration"
-		publication="20181226135659"
+		publication="20181226140723"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
@@ -86,6 +86,10 @@
 			<artifact name="oro" type="src" ext="jar" conf="*" e:classifier="sources"/>
 			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
+		<dependency org="junit" name="junit" rev="4.10" transitive="false" conf="test->default,compile,runtime,default(compile),master,runtime(*),master(compile),compile(*);test-internal->default,compile,runtime,default(compile),master,runtime(*),master(compile),compile(*)">
+			<artifact name="junit" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
 		<dependency org="org.tukaani" name="xz" rev="1.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="xz" type="src" ext="jar" conf="*" e:classifier="sources"/>
 			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
@@ -142,7 +146,7 @@
 			<artifact name="netlib-native_ref-win-x86_64" type="src" ext="jar" conf="*" e:classifier="sources"/>
 			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
-		<dependency org="junit" name="junit" rev="4.8.2" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+		<dependency org="junit" name="junit" rev="4.8.2" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="junit" type="src" ext="jar" conf="*" e:classifier="sources"/>
 			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
@@ -164,6 +168,10 @@
 		</dependency>
 		<dependency org="org.apache.curator" name="curator-framework" rev="2.6.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="curator-framework" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.hamcrest" name="hamcrest-core" rev="1.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="hamcrest-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
 			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
 		<dependency org="commons-codec" name="commons-codec" rev="1.8" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
@@ -254,8 +262,16 @@
 			<artifact name="json4s-ast_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
 			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
+		<dependency org="org.scala-lang.modules" name="scala-xml_2.11" rev="1.0.6" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scala-xml_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
 		<dependency org="com.fasterxml.jackson.module" name="jackson-module-scala_2.11" rev="2.6.5" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="jackson-module-scala_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scalactic" name="scalactic_2.11" rev="3.0.5" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scalactic_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
 			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
 		<dependency org="org.glassfish.hk2" name="hk2-api" rev="2.4.0-b34" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
@@ -374,7 +390,7 @@
 			<artifact name="jackson-annotations" type="src" ext="jar" conf="*" e:classifier="sources"/>
 			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
-		<dependency org="org.scala-lang.modules" name="scala-xml_2.11" rev="1.0.5" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master;scala-tool->compile,runtime(*),master(compile),runtime,compile(*),master">
+		<dependency org="org.scala-lang.modules" name="scala-xml_2.11" rev="1.0.5" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;scala-tool->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="scala-xml_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
 			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
@@ -552,6 +568,10 @@
 		</dependency>
 		<dependency org="com.thoughtworks.paranamer" name="paranamer" rev="2.6" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
 			<artifact name="paranamer" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scalatest" name="scalatest_2.11" rev="3.0.5" transitive="false" conf="test->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="scalatest_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
 			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
 		<dependency org="com.github.fommil.netlib" name="netlib-native_ref-linux-i686" rev="1.1" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">

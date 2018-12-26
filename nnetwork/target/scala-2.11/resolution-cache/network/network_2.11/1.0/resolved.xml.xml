@@ -4,7 +4,7 @@
 		module="network_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20181226135653"
+		publication="20181226140717"
 	>
 		<description>
 		network
@@ -38,5 +38,7 @@
 		<dependency org="org.scalanlp" name="breeze-natives_2.11" rev="0.13.2" conf="compile->default(compile)"/>
 		<dependency org="org.scalanlp" name="breeze-viz_2.11" rev="0.13.2" conf="compile->default(compile)"/>
 		<dependency org="tw.edu.ntu.csie" name="libsvm" rev="3.1" conf="compile->default(compile)"/>
+		<dependency org="junit" name="junit" rev="4.10" conf="test->default(compile)"/>
+		<dependency org="org.scalatest" name="scalatest_2.11" rev="3.0.5" conf="test->default(compile)"/>
 	</dependencies>
 </ivy-module>

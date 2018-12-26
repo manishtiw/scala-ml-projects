@@ -28,3 +28,9 @@ libraryDependencies  ++= Seq(
 libraryDependencies += "tw.edu.ntu.csie" % "libsvm" % "3.1"
 
 resolvers += "Sonatype Releases" at "https://oss.sonatype.org/content/repositories/releases/"
+libraryDependencies += "junit" % "junit" % "4.10" % Test
+
+libraryDependencies += "tw.edu.ntu.csie" % "libsvm" % "3.1"
+//libraryDependencies += "org.scala-lang.modules" %% "scala-parser-combinators" % "1.0.4"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5" % "test"
+
