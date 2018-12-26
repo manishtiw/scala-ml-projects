@@ -3,7 +3,7 @@
 ## Implementation of Neural network
 ### Project Name: network
 
-##*Description* 
+### Description 
 The algorithm implements the neural network architecture from scratch. The implementation primarily consists of :-
 ### 1.) *Feedforward function*  
 ### 2.) *Cost function*
