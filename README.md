@@ -10,6 +10,5 @@ The algorithm implements the neural network architecture from scratch. The imple
 ### 3.) *Backpropogation* 
 ### 4.) *Activation Function*
 ### 5.) *Activation derivative*
-here is link for understanding backpropogation from Andrej Karpathy.
-[a link](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b)
+here is [link link](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b) for understanding backpropogation from Andrej Karpathy.
 
