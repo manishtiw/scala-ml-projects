@@ -71,9 +71,10 @@ class NNetwork(val layers: List[Int]) extends Network  {
   def adjust_weights(delta_weights: List[DenseMatrix[Double]]):Unit = {
     for( j <- (0 until delta_weights.length))
     {
-      weights.updated(j,delta_weights(j))
+      weights.updated(j,weights(j) - delta_weights(j))
     }
   }
+
   def train(xs:List[(DenseMatrix[Double],DenseMatrix[Double])]): Unit = {
     for (z <- xs){
       var network_output = feedforward((z._1))
