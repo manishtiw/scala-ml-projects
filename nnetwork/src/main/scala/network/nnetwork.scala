@@ -36,6 +36,7 @@ class NNetwork(val layers: List[Int]) extends Network  {
     ((weights zip biases).foldLeft(xs)((s,x) => s*x._1 + x._2)) map (activation)
   }
 
+  @tailrec
   def get_states(xs: DenseMatrix[Double]): List[DenseMatrix[Double]] = {
     var states: List[DenseMatrix[Double]] = List()
     states = states:+xs
@@ -45,22 +46,23 @@ class NNetwork(val layers: List[Int]) extends Network  {
     }))
     states
   }
+
   @tailrec
   def backpropogation(y_out:DenseMatrix[Double] , y:DenseMatrix[Double],xs: DenseMatrix[Double]): List[DenseMatrix[Double]] = {
     var wval: List[DenseMatrix[Double]] = List()
     var bval: List[DenseMatrix[Double]] = List()
     var states = get_states(xs).reverse
     var DELTA = cost(y_out,y)
-
+    DELTA = DELTA*:* (states(0) map (activation_derivative))
     weights.foldRight(DELTA)((w,d)=> {
 
       wval = wval :+ (w*d.reshape(w.cols,1))
       w*d.reshape(w.cols,1)
 
     })
-    DELTA = DELTA*:* (states(0) map (activation_derivative))
+
     var states_activation_prime = states.tail.map(x => x map ( y => activation_derivative(y)))
-    var delta_weights = wval map (x => x map activation_derivative)
+    var delta_weights= ((wval zip states_activation_prime) map (x => x._1.t *:* x._2))
     var layer_activation = states.tail.map(x => x map ( y => activation(y)))
     delta_weights = ((delta_weights zip layer_activation) map (x => x._1*x._2.t))
     delta_weights
